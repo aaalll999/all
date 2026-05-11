@@ -1,0 +1,53 @@
+1) Create Table 
+CREATE TABLE Employee ( 
+EmpID INT PRIMARY KEY, 
+Name VARCHAR(50), 
+Department VARCHAR(30), 
+Salary INT, 
+City VARCHAR(30) 
+); 
+2) Insert Records 
+INSERT INTO Employee VALUES 
+(1, 'Aashish', 'IT', 50000, 'Aurangabad'), 
+(2, 'Rahul', 'HR', 35000, 'Pune'), 
+(3, 'Sneha', 'IT', 60000, 'Mumbai'), 
+(4, 'Priya', 'Sales', 40000, 'Nashik'), 
+(5, 'Rohan', 'HR', 30000, 'Pune'), 
+(6, 'Neha', 'IT', 70000, 'Mumbai'); 
+Aggregate Functions 
+COUNT() 
+SELECT COUNT(*) AS Total_Employees 
+FROM Employee; 
+SUM() 
+SELECT SUM(Salary) AS Total_Salary 
+FROM Employee; 
+AVG() 
+SELECT AVG(Salary) AS Average_Salary 
+FROM Employee; 
+MAX() 
+SELECT MAX(Salary) AS Highest_Salary 
+FROM Employee; 
+MIN() 
+SELECT MIN(Salary) AS Lowest_Salary 
+FROM Employee; 
+GROUP BY Clause 
+Department Wise Total Salary 
+SELECT Department, SUM(Salary) AS Total_Salary 
+FROM Employee 
+GROUP BY Department; 
+Department Wise Average Salary 
+SELECT Department, AVG(Salary) AS Average_Salary 
+FROM Employee 
+GROUP BY Department; 
+HAVING Clause 
+Departments Having Average Salary Greater Than 40000 
+SELECT Department, AVG(Salary) AS Average_Salary 
+FROM Employee 
+GROUP BY Department 
+HAVING AVG(Salary) > 40000; 
+Nested Queries 
+Employee Having Maximum Salary 
+SELECT * FROM Employee 
+WHERE Salary = ( 
+SELECT MAX(Salary) FROM Employee 
+); 
