@@ -1,0 +1,23 @@
+------------------------------------------------- -- Create STUDENT table ------------------------------------------------- 
+CREATE TABLE STUDENT ( 
+RollNo NUMBER, 
+Name VARCHAR2(20), 
+City VARCHAR2(20), 
+Marks NUMBER 
+); ------------------------------------------------- -- Insert Records ------------------------------------------------- 
+INSERT INTO STUDENT VALUES (1, 'Amit', 'Pune', 85); 
+INSERT INTO STUDENT VALUES (2, 'Sneha', 'Mumbai', 92); 
+INSERT INTO STUDENT VALUES (3, 'Rahul', 'Nashik', 70); 
+INSERT INTO STUDENT VALUES (4, 'Priya', 'Pune', 88); ------------------------------------------------- -- ALTER TABLE ------------------------------------------------- 
+ALTER TABLE STUDENT 
+ADD Email VARCHAR2(30); ------------------------------------------------- -- LIKE Operator ------------------------------------------------- 
+SELECT * FROM STUDENT 
+WHERE Name LIKE 'A%'; ------------------------------------------------- -- IN Operator ------------------------------------------------- 
+SELECT * FROM STUDENT 
+WHERE City IN ('Pune', 'Mumbai'); ------------------------------------------------- -- BETWEEN Operator ------------------------------------------------- 
+SELECT * FROM STUDENT 
+WHERE Marks BETWEEN 70 AND 90; ------------------------------------------------- -- SORTING ------------------------------------------------- -- Ascending Order 
+SELECT * FROM STUDENT 
+ORDER BY Marks ASC; -- Descending Order 
+SELECT * FROM STUDENT 
+ORDER BY Marks DESC;
