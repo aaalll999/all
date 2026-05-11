@@ -1,0 +1,32 @@
+------------------------------------------------- -- Create STUDENT table ------------------------------------------------- 
+CREATE TABLE STUDENT ( 
+RollNo NUMBER, 
+Name VARCHAR2(20), 
+City VARCHAR2(20), 
+Marks NUMBER 
+); ------------------------------------------------- -- Insert Records ------------------------------------------------- 
+INSERT INTO STUDENT VALUES (1, 'Amit', 'Pune', 85); 
+INSERT INTO STUDENT VALUES (2, 'Sneha', 'Mumbai', 92); 
+INSERT INTO STUDENT VALUES (3, 'Rahul', 'Nashik', 70); 
+INSERT INTO STUDENT VALUES (4, 'Priya', 'Pune', 88); ------------------------------------------------- -- Relational Operations ------------------------------------------------- -- Equal (=) 
+SELECT * FROM STUDENT 
+WHERE City = 'Pune'; -- Greater Than (>) 
+SELECT * FROM STUDENT 
+WHERE Marks > 80; -- Less Than (<) 
+SELECT * FROM STUDENT 
+WHERE Marks < 90; -- Greater Than Equal To (>=) 
+SELECT * FROM STUDENT 
+WHERE Marks >= 85; -- Less Than Equal To (<=) 
+SELECT * FROM STUDENT 
+WHERE Marks <= 70; -- AND Operator 
+SELECT * FROM STUDENT 
+WHERE City = 'Pune' AND Marks > 80; -- OR Operator 
+SELECT * FROM STUDENT 
+WHERE City = 'Mumbai' OR Marks > 90; ------------------------------------------------- -- Nested Query ------------------------------------------------- 
+SELECT Name, Marks 
+FROM STUDENT 
+WHERE Marks = ( 
+SELECT MAX(Marks) 
+FROM STUDENT 
+); ------------------------------------------------- -- DROP TABLE ------------------------------------------------- 
+DROP TABLE STUDENT;
