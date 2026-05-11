@@ -1,0 +1,31 @@
+------------------------------------------------- -- Create Tables ------------------------------------------------- 
+CREATE TABLE STUDENT_A ( 
+Name VARCHAR2(20) 
+); 
+CREATE TABLE STUDENT_B ( 
+Name VARCHAR2(20) 
+); ------------------------------------------------- -- Insert Records ------------------------------------------------- 
+INSERT INTO STUDENT_A VALUES ('Amit'); 
+INSERT INTO STUDENT_A VALUES ('Sneha'); 
+INSERT INTO STUDENT_A VALUES ('Rahul'); 
+INSERT INTO STUDENT_B VALUES ('Sneha'); 
+INSERT INTO STUDENT_B VALUES ('Priya'); 
+INSERT INTO STUDENT_B VALUES ('Rahul'); ------------------------------------------------- -- UNION ------------------------------------------------- 
+SELECT Name FROM STUDENT_A 
+UNION 
+SELECT Name FROM STUDENT_B; ------------------------------------------------- -- UNION ALL ------------------------------------------------- 
+SELECT Name FROM STUDENT_A 
+UNION ALL 
+SELECT Name FROM STUDENT_B; ------------------------------------------------- -- INTERSECT ------------------------------------------------- 
+SELECT Name FROM STUDENT_A 
+INTERSECT 
+SELECT Name FROM STUDENT_B; ------------------------------------------------- -- MINUS ------------------------------------------------- 
+SELECT Name FROM STUDENT_A 
+MINUS 
+SELECT Name FROM STUDENT_B; ------------------------------------------------- -- ALTER TABLE Operations ------------------------------------------------- -- Add Column 
+ALTER TABLE STUDENT_A 
+ADD City VARCHAR2(20); -- Modify Column 
+ALTER TABLE STUDENT_A 
+MODIFY City VARCHAR2(30); -- Drop Column 
+ALTER TABLE STUDENT_A 
+DROP COLUMN City;
