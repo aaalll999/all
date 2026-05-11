@@ -1,0 +1,15 @@
+------------------------------------------------- -- Create EMPLOYEE table with Constraints ------------------------------------------------- 
+CREATE TABLE EMPLOYEE ( 
+Emp_ID NUMBER PRIMARY KEY, 
+Name VARCHAR2(20) NOT NULL, 
+Email VARCHAR2(30) UNIQUE, 
+Salary NUMBER DEFAULT 5000, 
+Age NUMBER CHECK (Age >= 18) 
+); 
+------------------------------------------------- -- Insert Records ------------------------------------------------- 
+INSERT INTO EMPLOYEE 
+VALUES (1, 'Amit', 'amit@gmail.com', 15000, 22); 
+INSERT INTO EMPLOYEE 
+VALUES (2, 'Sneha', 'sneha@gmail.com', DEFAULT, 25); 
+------------------------------------------------- -- Display Table ------------------------------------------------- 
+SELECT * FROM EMPLOYEE;
