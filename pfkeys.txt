@@ -1,0 +1,26 @@
+------------------------------------------------- -- Create DEPARTMENT table ------------------------------------------------- 
+CREATE TABLE DEPARTMENT ( 
+Dept_ID int PRIMARY KEY, 
+Dept_Name VARCHAR2(20) 
+);
+------------------------------------------------- -- Create STUDENT table ------------------------------------------------- 
+CREATE TABLE STUDENT ( 
+RollNo int PRIMARY KEY, 
+Name VARCHAR2(20), 
+City VARCHAR2(20), 
+Dept_ID int, 
+ 
+FOREIGN KEY (Dept_ID) 
+REFERENCES DEPARTMENT(Dept_ID) 
+);
+------------------------------------------------- -- Insert records into DEPARTMENT ------------------------------------------------- 
+INSERT INTO DEPARTMENT VALUES (101, 'Computer'); 
+INSERT INTO DEPARTMENT VALUES (102, 'IT'); 
+INSERT INTO DEPARTMENT VALUES (103, 'Mechanical');
+------------------------------------------------- -- Insert records into STUDENT ------------------------------------------------- 
+INSERT INTO STUDENT VALUES (1, 'Amit', 'Pune', 101); 
+INSERT INTO STUDENT VALUES (2, 'Sneha', 'Mumbai', 102); 
+INSERT INTO STUDENT VALUES (3, 'Rahul', 'Nashik', 101);
+------------------------------------------------- -- Display tables ------------------------------------------------- 
+SELECT * FROM DEPARTMENT; 
+SELECT * FROM STUDENT;
